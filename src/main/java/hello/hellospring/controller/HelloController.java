@@ -27,4 +27,21 @@ public class HelloController {
     public String helloString(@RequestParam("name") String name){
         return "hello"+name;
     }
+    @GetMapping("hello-api")
+    @ResponseBody
+    //JSON포맷으로 출력됨
+    public Hello helloApi(@RequestParam("name") String name,@RequestParam("val") int val){
+        Hello hello =new Hello();
+        hello.setName(name);
+        hello.setVal(val);
+        return hello;
+    }
+    class Hello{
+        private String name;
+        private int val;
+        public String getName() {return name;}
+        public void setName(String name) {this.name = name;}
+        public int getVal() {return val;}
+        public void setVal(int val) {this.val = val;}
+    }
 }
