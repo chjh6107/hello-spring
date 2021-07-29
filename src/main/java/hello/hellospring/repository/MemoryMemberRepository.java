@@ -6,7 +6,7 @@ import java.util.*;
 
 public class MemoryMemberRepository implements MemberRepository{
     private static Map<Long, Member> store=new HashMap<>();
-    private static long sequence=0;
+    private static long sequence=0L;
 
     @Override
     public Member save(Member member) {
@@ -16,7 +16,7 @@ public class MemoryMemberRepository implements MemberRepository{
     }
 
     @Override
-    public Optional<Member> finById(Long id) {
+    public Optional<Member> findById(Long id) {
         //optional의 ofNullable 메서드 사용시 null이어도 감싸서 return 가능
         return Optional.ofNullable(store.get(id));
     }
