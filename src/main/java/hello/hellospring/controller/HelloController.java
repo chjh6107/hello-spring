@@ -23,7 +23,7 @@ public class HelloController {
     }
     @GetMapping("hello-string")
     @ResponseBody //http body부에 return할 내용을 직접 넣겠다는 것
-    //html태그없이 그냥 그대로 꽂아버림
+    //html태그없이 뷰를 거치지 않고 그냥 그대로 꽂아버림
     public String helloString(@RequestParam("name") String name){
         return "hello"+name;
     }
