@@ -9,7 +9,12 @@ import java.util.Optional;
 
 //회원 서비스 만들기
 public class MemberService {
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    private final MemberRepository memberRepository;
+
+    public MemberService(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
+
     //회원가입
     public Long join(Member member){
         //중복회원은 안됨
