@@ -9,12 +9,12 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-@Service //일반 자바 코드로 이루어진 클리스를 스프링 컨테이너에 등록해줌
+//@Service //일반 자바 코드로 이루어진 클리스를 스프링 컨테이너에 등록해줌
 //회원 서비스 만들기
 public class MemberService {
     private final MemberRepository memberRepository;
 
-    @Autowired
+//    @Autowired
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
